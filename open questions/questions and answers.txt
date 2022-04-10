@@ -1,0 +1,25 @@
+Question 1
+
+Describe how you would approach designing a resilient and fault-tolerant hosting infrastructure with AWS for an application currently running on an on-premises load-balanced cluster of application servers and a single MySQL database server. How would you configure networking within that infrastructure? What AWS services would you use and why?
+
+answer：
+1. Create a VPC instance, create a VPC subnet, select an area near the service area, and plan host IP addresses.  
+2. Create a routing table, add route entries, associate them with the subnet, and set the gateway traffic.  
+3. Create a VPC security group and set inbound and outbound rules for the VPC.
+4. Configure EC2 hosts and  create load Balance and Autoscaling to ensure high availability of the cluster.
+5. The multi-master/slave MySQL service implements read/write separation（choose different region and different AZ）.
+6. Create Nginx cluster, Redis cluster and PHP application service on this infrastructure.
+
+
+Question 2
+
+If you are given Windows 10 as your work machine (with 8-core CPUs and 16GB RAM), but you need to work with many Pythons and Linux Bash scripting along with many different Linux based docker containers.
+
+Assuming you cannot change the machine’s operating system and cannot re-partition any of the local HDDs; However, you have admin access to install software and enabling some Windows features.
+
+How would you setup your work environment on the machine?
+
+answer：
+Install Virtualization Software, such as vmware workstation, virtualbox, vagrent, docker.
+If Python needs to run different versions on the same machine, such as 2.7 or 3.6, you can install Python's virtual environment venv for version isolation.  
+
